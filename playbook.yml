@@ -1,0 +1,11 @@
+---
+- name: deploy customised app on qa servers
+  hosts: all
+  tasks: 
+   - name: create container for customised image
+     docker_container:
+     name: myapp
+     image: dockerrepository1/myapp
+     ports: 
+       - 6060:8080
+...
